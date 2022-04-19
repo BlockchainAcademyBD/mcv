@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARRIAGE REGISTER OFFICE BD</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.4/web3.min.js"></script>
+    <script src="src/app.js"></script>
+    <script src="src/web3.min.js"></script>
+    <script src="src/loadcerti.js"></script>
+
+  </head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-dark p-3">
+        <div class="d-flex col-12 col-md-3 col-lg-2 mb-0 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+            <a class="navbar-brand" href="#" style="text-decoration: solid; font-size: 20px;">
+               MARRIAGE REGISTER OFFICE BD
+            </a>
+            <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+        </div>
+
+        <div class="d-flex justify-content-md-end">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                  <span id="metamaskstatus">NOT CONNECTED</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">Disconnect</a></li>
+                </ul>
+              </div>
+        </div>
+      </nav>
+    <!-- Navigation Bar End -->
+
+    <!-- SideBar -->
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <!-- sidebar content goes in here -->
+                <div class="position-sticky pt-md-0">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                            <span class="ml-2">ড্যাশবোর্ড</span>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./issuecertificate.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                            <span class="ml-2">নতুন সনদ</span>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./verify.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <span class="ml-2">সনদ যাচাই</span>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                            <span class="ml-2">কাজি অফিস</span>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            <span class="ml-2">অন্যান্য</span>
+                          </a>
+                        </li>
+                      </ul>
+                  </div>
+                <!-- sidebar content goes in here -->
+
+            </nav>
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+
+              <div style="text-align: center;"></br>
+                <img src="/marry.png" style="width: 300px;">
+                <h2 class="text-center text-black">কাবিন নামা যাচাই করণ পোর্টালে আপনাকে স্বাগতম</h2>
+              </br>
+              </div>
+
+
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header">সংরক্ষিত সনদ</h5>
+                            <div class="card-body">
+                              <h5 class="card-title" style="color: rgb(4, 96, 255);">৩৪৫,৫৪২ টি</h5>
+                              <p class="card-text">সময়কাল ২০১২-২০২২</p>
+                              <p class="card-text text-success">১৮.৯% বৃদ্ধি পূর্ববর্তী সাল হতে</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-4">
+                        <div class="card">
+                            <h5 class="card-header">কাজি অফিস</h5>
+                            <div class="card-body">
+                              <h5 class="card-title" style="color: rgb(0, 180, 75);">২৯ টি</h5>
+                              <p class="card-text">সময়কাল ২০১২-২০২২</p>
+                              <p class="card-text text-success">৮.৯% বৃদ্ধি পূর্ববর্তী সাল হতে</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-4">
+                        <div class="card">
+                            <h5 class="card-header">সনদ পরিক্ষিত হয়েছে</h5>
+                            <div class="card-body">
+                              <h5 class="card-title" style="color:brown;">১,২৩,৪৩৫ বার</h5>
+                              <p class="card-text">সময়কাল ১মার্চ - ৩১মার্চ, ২০২২</p>
+                              <p class="card-text text-success">১৮.৯% বৃদ্ধি পূর্ববর্তী মাস হতে</p>
+                            </div>
+                          </div>
+                    </div>
+
+                  </div>
+
+
+
+
+            </main>
+        </div>
+        
+      </div>
+
+    <!-- Sidebar End -->
+
+<!-- Footer -->
+
+    <!-- insert scripts here -->
+    <script src="src/chartlist.js"></script>
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>
+  
